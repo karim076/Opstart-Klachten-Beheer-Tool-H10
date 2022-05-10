@@ -27,8 +27,8 @@
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Background="{ThemeResource SystemAccentColor}">
             <StackPanel Margin="0,15,0,0" VerticalAlignment="Center" Orientation="Vertical" HorizontalAlignment="Center" Padding="30" Background="{ThemeResource SystemAccentColor}">
-                <TextBlock FontSize="25" x:Name="count">test</TextBlock>
-                <TextBlock FontSize="25" x:Name="mean">test</TextBlock>
+                <TextBlock FontSize="25" ><Run x:Name="count"/></TextBlock>
+                <TextBlock FontSize="25" ><Run x:Name="mean"/></TextBlock>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="3"  Padding="30" Background="{ThemeResource SystemAccentColor}">
@@ -46,11 +46,17 @@
             </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:Klacht">
-                    <StackPanel Height="auto" Width="600px" Margin="0,20,0,20">
+                    <StackPanel Height="auto" Width="auto" Margin="30,20,0,20">
                         <TextBlock Foreground="white" CharacterSpacing="3">
                             <Run Foreground="white" FontSize="33">KlachtNummer</Run> <Run FontWeight="ExtraBlack" FontSize="33" Text="{x:Bind Id}"></Run><LineBreak/>
-                            <Run></Run>
+                            <Run FontSize="16" FontStyle="Italic">Bron</Run> <Run FontSize="16" FontStyle="Italic" Text="{x:Bind Source}"/><LineBreak/>
+                            <Run FontSize="16" FontStyle="Italic" Text="{x:Bind FirstName}"/> <Run FontSize="16" FontStyle="Italic" Text="{x:Bind LastName}"/><LineBreak/>
+                            <Run FontSize="16" FontStyle="Italic">Park bezocht om</Run> <Run FontSize="16" FontStyle="Italic" Text="{x:Bind DateOfVisit}"/><LineBreak/>
+                            <LineBreak/>
                         </TextBlock>
+                        <StackPanel Width="600" HorizontalAlignment="Left">
+                            <TextBlock Foreground="white" TextWrapping="Wrap" FontSize="16" Text="{x:Bind Message}"/>
+                        </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
