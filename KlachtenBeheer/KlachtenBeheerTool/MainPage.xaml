@@ -26,9 +26,9 @@
             <TextBlock x:Name="tbFileStatus" Margin="30,0,0,0" VerticalAlignment="Center" Width="178"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Background="{ThemeResource SystemAccentColor}">
-            <StackPanel Margin="0,20,0,0" VerticalAlignment="Center" Orientation="Vertical" HorizontalAlignment="Center" Padding="30" Background="{ThemeResource SystemAccentColor}">
-                <TextBlock x:Name="count">test</TextBlock>
-                <TextBlock x:Name="mean">test</TextBlock>
+            <StackPanel Margin="0,15,0,0" VerticalAlignment="Center" Orientation="Vertical" HorizontalAlignment="Center" Padding="30" Background="{ThemeResource SystemAccentColor}">
+                <TextBlock FontSize="25" x:Name="count">test</TextBlock>
+                <TextBlock FontSize="25" x:Name="mean">test</TextBlock>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="3"  Padding="30" Background="{ThemeResource SystemAccentColor}">
@@ -36,8 +36,24 @@
                 <Button x:Name="localMap" HorizontalAlignment="Center" Content="Open locale map" Click="Button_Click_1"/>
             </StackPanel>
         </StackPanel>
-        
-        
+        <ListView  x:Name="lvKlacht" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:Klacht">
+                    <StackPanel Height="20" Width="200px" Background="Wheat">
+                        <TextBlock>sdwasdw</TextBlock>
+                        <TextBlock>
+                            <Run Foreground="Black" FontSize="40">KlachtNummer</Run><Run Text="{x:Bind Id}"></Run><LineBreak/>
+                        </TextBlock>
+                    </StackPanel>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </Grid>
 </Page>
