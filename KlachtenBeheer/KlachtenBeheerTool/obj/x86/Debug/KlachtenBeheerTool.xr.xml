@@ -46,14 +46,15 @@
       <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="FontSize" />
       <RootProperty Name="Padding" />
-      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="Text" />
+      <RootProperty Name="TextAlignment" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="FontStyle" />
       <RootProperty Name="Inlines" />
-      <RootProperty Name="FontSize" />
       <RootProperty Name="AllowFocusWhenDisabled" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="CharacterSpacing" />
@@ -73,7 +74,9 @@
       <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="Click" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">
+      <RootProperty Name="Content" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="IsReadOnly" />
       <RootProperty Name="VerticalAlignment" />

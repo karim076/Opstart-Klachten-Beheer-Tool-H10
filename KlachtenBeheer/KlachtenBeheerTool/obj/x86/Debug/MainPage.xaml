@@ -22,18 +22,18 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Orientation="Horizontal" Padding="30" Background="{ThemeResource SystemAccentColor}">
-            <Button x:ConnectionId='17' Content="Kies CSV bestand"                     />
-            <TextBlock x:ConnectionId='18' x:Name="tbFileStatus" Margin="30,0,0,0" VerticalAlignment="Center" Width="178"></TextBlock>
+            <Button x:ConnectionId='18' Content="Kies CSV bestand"                     />
+            <TextBlock x:ConnectionId='19' x:Name="tbFileStatus" Margin="30,0,0,0" VerticalAlignment="Center" Width="178"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Background="{ThemeResource SystemAccentColor}">
             <StackPanel Margin="0,15,0,0" VerticalAlignment="Center" Orientation="Vertical" HorizontalAlignment="Center" Padding="30" Background="{ThemeResource SystemAccentColor}">
-                <TextBlock FontSize="25" ><Run x:ConnectionId='16' x:Name="count"/></TextBlock>
-                <TextBlock FontSize="25" ><Run x:ConnectionId='15' x:Name="mean"/></TextBlock>
+                <TextBlock FontSize="25" ><Run x:ConnectionId='17' x:Name="count"/></TextBlock>
+                <TextBlock FontSize="25" ><Run x:ConnectionId='16' x:Name="mean"/></TextBlock>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="3"  Padding="30" Background="{ThemeResource SystemAccentColor}">
             <StackPanel HorizontalAlignment="Center" Padding="30" Background="{ThemeResource SystemAccentColor}">
-                <Button x:ConnectionId='14' x:Name="localMap" HorizontalAlignment="Center" Content="Open locale map"                       />
+                <Button x:ConnectionId='15' x:Name="localMap" HorizontalAlignment="Center" Content="Open locale map"                       />
             </StackPanel>
         </StackPanel>
 
@@ -46,16 +46,16 @@
             </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate                          >
-                    <StackPanel x:ConnectionId='7' Height="auto" Width="auto" Margin="30,20,0,20">
+                    <StackPanel x:ConnectionId='8' Height="auto" Width="auto" Margin="30,20,0,20">
                         <TextBlock Foreground="white" CharacterSpacing="3">
-                            <Run Foreground="white" FontSize="33">KlachtNummer</Run> <Run x:ConnectionId='9' FontWeight="ExtraBlack" FontSize="33"                   ></Run><LineBreak/>
-                            <Run FontSize="16" FontStyle="Italic">Bron</Run> <Run x:ConnectionId='10' FontSize="16" FontStyle="Italic"                       /><LineBreak/>
-                            <Run x:ConnectionId='11' FontSize="16" FontStyle="Italic"                          /> <Run x:ConnectionId='12' FontSize="16" FontStyle="Italic"                         /><LineBreak/>
-                            <Run FontSize="16" FontStyle="Italic">Park bezocht om</Run> <Run x:ConnectionId='13' FontSize="16" FontStyle="Italic"                            /><LineBreak/>
+                            <Run Foreground="white" FontSize="33">KlachtNummer</Run> <Run x:ConnectionId='10' FontWeight="ExtraBlack" FontSize="33"                   ></Run><LineBreak/>
+                            <Run FontSize="16" FontStyle="Italic">Bron</Run> <Run x:ConnectionId='11' FontSize="16" FontStyle="Italic"                       /><LineBreak/>
+                            <Run x:ConnectionId='12' FontSize="16" FontStyle="Italic"                          /> <Run x:ConnectionId='13' FontSize="16" FontStyle="Italic"                         /><LineBreak/>
+                            <Run FontSize="16" FontStyle="Italic">Park bezocht om</Run> <Run x:ConnectionId='14' FontSize="16" FontStyle="Italic"                            /><LineBreak/>
                             <LineBreak/>
                         </TextBlock>
                         <StackPanel Width="600" HorizontalAlignment="Left">
-                            <TextBlock x:ConnectionId='8' Foreground="white" TextWrapping="Wrap" FontSize="16"                        />
+                            <TextBlock x:ConnectionId='9' Foreground="white" TextWrapping="Wrap" FontSize="16"                        />
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>
@@ -65,19 +65,21 @@
             <StackPanel Margin="0,20,0,0" Padding="70,30,70,30" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10" BorderBrush="Black" BorderThickness="2">
                 <StackPanel Orientation="Horizontal" Spacing="5">
                     <TextBlock FontSize="20" VerticalAlignment="Center" AllowFocusWhenDisabled="True">Geslecteerde klacht:</TextBlock>
-                    <TextBox x:ConnectionId='5' IsReadOnly="True" VerticalAlignment="Center" Width="300" x:Name="klachtNr"></TextBox>
+                    <TextBox x:ConnectionId='6' IsReadOnly="True" VerticalAlignment="Center" Width="300" x:Name="klachtNr"></TextBox>
                 </StackPanel>
                 <StackPanel>
                     <TextBlock FontStyle="Italic">Selecteer links in de lijst een klacht daar erop klikken.</TextBlock>
                 </StackPanel>
             </StackPanel>
-            <StackPanel HorizontalAlignment="center" Orientation="Horizontal"  Spacing="15" BorderBrush="Black" BorderThickness="2" Height="66" Width="624">
-                <TextBlock x:ConnectionId='3' Padding="30,0,0,0" VerticalAlignment="center" Height="15" Width="240"                                               Text="          Doorsturen naar afdeling:"/>
-                <ComboBox HorizontalAlignment="center" VerticalAlignment="center" Width="150">
-                    <ComboBoxItem></ComboBoxItem>
-
+            <StackPanel Margin="0,40" Orientation="Horizontal"  Spacing="15" BorderBrush="Black" BorderThickness="2" Height="66" Width="626">
+                <TextBlock x:ConnectionId='3' FontSize="15" Padding="30,0,0,0" Height="42" Width="309"                                               Text="          Doorsturen naar afdeling:" TextAlignment="Center" VerticalAlignment="Bottom"/>
+                <ComboBox x:ConnectionId='4' x:Name="department" HorizontalAlignment="center" VerticalAlignment="center" Width="150">
+                    <ComboBoxItem>Technische dienst</ComboBoxItem>
+                    <ComboBoxItem>Groenverzorging</ComboBoxItem>
+                    <ComboBoxItem>Klantenservice</ComboBoxItem>
+                    <ComboBoxItem>Horeca</ComboBoxItem>
                 </ComboBox>
-                <Button x:ConnectionId='4'                        Content="Stuur door" HorizontalAlignment="center" VerticalAlignment="center"/>
+                <Button x:ConnectionId='5'                        Content="Stuur door" HorizontalAlignment="center" VerticalAlignment="center"/>
             </StackPanel>
 
         </StackPanel>
