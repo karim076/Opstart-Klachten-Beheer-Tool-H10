@@ -7,7 +7,9 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.Storage.Pickers;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -74,9 +76,9 @@ namespace KlachtenBeheerTool
             mean.Text = "Gemiddelde revieuw: " + means.ToString("0.0");
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private async void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            await Launcher.LaunchFolderAsync(ApplicationData.Current.LocalFolder);
         }
     }
 }
