@@ -61,8 +61,11 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <StackPanel Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" Background="LightGray">
-            
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" Background="LightGray">
+            <StackPanel>
+                <TextBlock AllowFocusWhenDisabled="True">Geslecteerde klacht:</TextBlock>
+                
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>
