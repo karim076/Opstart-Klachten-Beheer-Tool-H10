@@ -64,7 +64,7 @@ namespace KlachtenBeheerTool
 
                             foreach(var record in records)
                             {
-                                revieuwCount = + float.Parse(record.ReviewScore);
+                                revieuwCount = + 1 +float.Parse(record.ReviewScore);
                             }
                             // count.Text = "Aantal Klachten: " + Convert.ToString(numComplaints);
                         }
@@ -103,9 +103,16 @@ namespace KlachtenBeheerTool
             }
         }
 
-        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        private async void sendMsg_Click(object sender, RoutedEventArgs e)
         {
+            if (departmentSecond != null)
+            {
+                string afdeling = departmentSecond.SelectionBoxItem.ToString();
+                var storageFolder = ApplicationData.Current.LocalFolder;
+                var file = await storageFolder.CreateFileAsync("Doorsturen_naar_" + afdeling + ".txt", CreationCollisionOption.ReplaceExisting);
 
+                await FileIO.AppendTextAsync(file, "--------------Klachtnummer--------------\n" + klachtNr.Text + "\n--------------Bericht--------------\n" + klachtMsgSecond.Text + "\n--------------Afdeling--------------\n" + afdeling);
+            }
         }
     }
 }

@@ -62,7 +62,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" Background="LightGray">
-            <StackPanel Margin="0,20,0,0" Padding="70,30,70,30" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10" BorderBrush="Black" BorderThickness="2">
+            <StackPanel Margin="0,30,0,0" Padding="70,30,70,30" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10" BorderBrush="Black" BorderThickness="2">
                 <StackPanel Orientation="Horizontal" Spacing="5">
                     <TextBlock FontSize="20" VerticalAlignment="Center" AllowFocusWhenDisabled="True">Geslecteerde klacht:</TextBlock>
                     <TextBox IsReadOnly="True" VerticalAlignment="Center" Width="300" x:Name="klachtNr"></TextBox>
@@ -72,8 +72,8 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Margin="0,40" Orientation="Horizontal"  Spacing="15" BorderBrush="Black" BorderThickness="2" Height="66" Width="626">
-                <TextBlock FontSize="15" Padding="30,0,0,0" Height="42" Width="285" SelectionChanged="TextBlock_SelectionChanged" Text="Doorsturen naar afdeling:" TextAlignment="Center" VerticalAlignment="Bottom"/>
-                <ComboBox x:Name="department" HorizontalAlignment="center" VerticalAlignment="center" Width="150">
+                <TextBlock FontSize="15" Padding="30,0,0,0" Height="42" Width="270" Text="Doorsturen naar afdeling:" TextAlignment="Center" VerticalAlignment="Bottom"/>
+                <ComboBox x:Name="department" VerticalAlignment="center" Width="160">
                     <ComboBoxItem Content="Technische dienst"/>
                     <ComboBoxItem Content="Groenverzorging"/>
                     <ComboBoxItem Content="Klantenservice"/>
@@ -81,7 +81,20 @@
                 </ComboBox>
                 <Button Click="Button_Click_2" Content="Stuur door" HorizontalAlignment="center" VerticalAlignment="center"/>
             </StackPanel>
-            
+
+            <StackPanel Margin="0,30,0,0" Orientation="Vertical"  Spacing="15" BorderBrush="Black" BorderThickness="2" Height="472" Width="626">
+                <TextBlock FontWeight="SemiBold" FontSize="20" Height="58" Width="484" HorizontalAlignment="Center" VerticalAlignment="Center"><Run/><LineBreak/><Run Text="Werkbriefje opstellen"/></TextBlock>
+                <StackPanel Orientation="Horizontal" Width="483">
+                    <TextBlock FontSize="18" Height="23" Width="138" ><Run Text="Voor afdeling:"/></TextBlock>
+                    <ComboBox x:Name="departmentSecond" Width="263">
+                        <ComboBoxItem Content="Technische dienst"/>
+                        <ComboBoxItem Content="Secretariaat"/>
+                    </ComboBox>
+                </StackPanel>
+                <TextBlock Width="458" FontSize="16" FontFamily="Arial">intructie:</TextBlock>
+                <TextBox x:Name="klachtMsgSecond" Width="458" Height="241"/>
+                <Button x:Name="sendMsg" Click="sendMsg_Click" Content="Werkbriefje opslaan" Width="511" HorizontalAlignment="Center" Height="42"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>
