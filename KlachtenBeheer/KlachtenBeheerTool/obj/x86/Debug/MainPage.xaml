@@ -38,7 +38,7 @@
         </StackPanel>
         
         
-        <ListView x:ConnectionId='2'  x:Name="lvKlacht" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="Black">
+        <ListView x:ConnectionId='2' IsItemClickEnabled="True"                                x:Name="lvKlacht" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="Black">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>

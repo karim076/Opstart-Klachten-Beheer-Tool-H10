@@ -80,5 +80,13 @@ namespace KlachtenBeheerTool
         {
             await Launcher.LaunchFolderAsync(ApplicationData.Current.LocalFolder);
         }
+
+        private async void lvKlacht_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var klacht = (Klacht)e.ClickedItem;
+            var Klachten = klacht.Row;
+            var popup = new Windows.UI.Popups.MessageDialog(Klachten);
+            await popup.ShowAsync();
+        }
     }
 }
