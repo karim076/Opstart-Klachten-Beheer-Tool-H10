@@ -95,9 +95,9 @@ namespace KlachtenBeheerTool
 
             if (department != null)
             {
-                string afdeling = department.Text;
+                string afdeling = department.SelectionBoxItem.ToString();
                 var storageFolder = ApplicationData.Current.LocalFolder;
-                var file = await storageFolder.CreateFileAsync("Doorsturen_naar"+ afdeling + ".txt", CreationCollisionOption.ReplaceExisting);
+                var file = await storageFolder.CreateFileAsync("Doorsturen_naar_"+ afdeling + ".txt", CreationCollisionOption.ReplaceExisting);
 
                 await FileIO.AppendTextAsync(file, "--------------Klachtnummer--------------\n"+ klachtNr.Text + "\n--------------Afdeling--------------\n" + afdeling);
             }
