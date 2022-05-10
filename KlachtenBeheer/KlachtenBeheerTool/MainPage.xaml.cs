@@ -37,7 +37,7 @@ namespace KlachtenBeheerTool
             picker.SuggestedStartLocation = PickerLocationId.Downloads;
             picker.FileTypeFilter.Add(".csv");
 
-            var counting = 0;
+            var counting = 1;// count start met 1 want het begint altijd met 0 dus doen we alvast +1 erbij
             float revieuwCount = 0;
             var file = await picker.PickSingleFileAsync();
             if (file == null)
