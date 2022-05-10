@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace KlachtenBeheerTool
@@ -36,7 +37,8 @@ namespace KlachtenBeheerTool
             picker.SuggestedStartLocation = PickerLocationId.Downloads;
             picker.FileTypeFilter.Add(".csv");
 
-            //TODO: voeg hier je eigen code toe, zoals uit H5, paragraaf 7
+            var counting = 0;
+            float revieuwCount = 0;
             var file = await picker.PickSingleFileAsync();
             if (file == null)
             {
@@ -46,7 +48,6 @@ namespace KlachtenBeheerTool
             {
                 tbFileStatus.Text = file.Path;
             }
-
             using (var fileAcces = await file.OpenReadAsync())
             {
                 using (var stream = fileAcces.AsStreamForRead())
@@ -55,12 +56,22 @@ namespace KlachtenBeheerTool
                     {
                         using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                         {
-                            var records = csv.GetRecords<Klacht>();
+                            var records = csv.GetRecords<Klacht>().ToList();
                             lvKlacht.ItemsSource = records;
+                            counting = records.Count;
+
+                            foreach(var record in records)
+                            {
+                                revieuwCount = + float.Parse(record.ReviewScore);
+                            }
+                            // count.Text = "Aantal Klachten: " + Convert.ToString(numComplaints);
                         }
                     }
                 }
             }
+            float means =  counting / revieuwCount;
+            count.Text = "Aantal Klachten: " + Convert.ToString(counting);
+            mean.Text = "Gemiddelde revieuw: " + means.ToString("0.0");
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

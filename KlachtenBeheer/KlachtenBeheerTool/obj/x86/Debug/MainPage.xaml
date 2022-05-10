@@ -22,23 +22,23 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Orientation="Horizontal" Padding="30" Background="{ThemeResource SystemAccentColor}">
-            <Button x:ConnectionId='9' Content="Kies CSV bestand"                     />
-            <TextBlock x:ConnectionId='10' x:Name="tbFileStatus" Margin="30,0,0,0" VerticalAlignment="Center" Width="178"></TextBlock>
+            <Button x:ConnectionId='14' Content="Kies CSV bestand"                     />
+            <TextBlock x:ConnectionId='15' x:Name="tbFileStatus" Margin="30,0,0,0" VerticalAlignment="Center" Width="178"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Background="{ThemeResource SystemAccentColor}">
             <StackPanel Margin="0,15,0,0" VerticalAlignment="Center" Orientation="Vertical" HorizontalAlignment="Center" Padding="30" Background="{ThemeResource SystemAccentColor}">
-                <TextBlock x:ConnectionId='7' FontSize="25" x:Name="count">test</TextBlock>
-                <TextBlock x:ConnectionId='8' FontSize="25" x:Name="mean">test</TextBlock>
+                <TextBlock FontSize="25" ><Run x:ConnectionId='13' x:Name="count"/></TextBlock>
+                <TextBlock FontSize="25" ><Run x:ConnectionId='12' x:Name="mean"/></TextBlock>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="3"  Padding="30" Background="{ThemeResource SystemAccentColor}">
             <StackPanel HorizontalAlignment="Center" Padding="30" Background="{ThemeResource SystemAccentColor}">
-                <Button x:ConnectionId='6' x:Name="localMap" HorizontalAlignment="Center" Content="Open locale map"                       />
+                <Button x:ConnectionId='11' x:Name="localMap" HorizontalAlignment="Center" Content="Open locale map"                       />
             </StackPanel>
         </StackPanel>
         
         
-        <ListView x:ConnectionId='2'  x:Name="lvKlacht" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+        <ListView x:ConnectionId='2'  x:Name="lvKlacht" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="Black">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
@@ -46,11 +46,17 @@
             </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate                          >
-                    <StackPanel x:ConnectionId='4' Height="20" Width="200px" Background="Wheat">
-                        <TextBlock>sdwasdw</TextBlock>
-                        <TextBlock>
-                            <Run Foreground="Black" FontSize="40">KlachtNummer</Run><Run x:ConnectionId='5'                   ></Run><LineBreak/>
+                    <StackPanel x:ConnectionId='4' Height="auto" Width="auto" Margin="30,20,0,20">
+                        <TextBlock Foreground="white" CharacterSpacing="3">
+                            <Run Foreground="white" FontSize="33">KlachtNummer</Run> <Run x:ConnectionId='6' FontWeight="ExtraBlack" FontSize="33"                   ></Run><LineBreak/>
+                            <Run FontSize="16" FontStyle="Italic">Bron</Run> <Run x:ConnectionId='7' FontSize="16" FontStyle="Italic"                       /><LineBreak/>
+                            <Run x:ConnectionId='8' FontSize="16" FontStyle="Italic"                          /> <Run x:ConnectionId='9' FontSize="16" FontStyle="Italic"                         /><LineBreak/>
+                            <Run FontSize="16" FontStyle="Italic">Park bezocht om</Run> <Run x:ConnectionId='10' FontSize="16" FontStyle="Italic"                            /><LineBreak/>
+                            <LineBreak/>
                         </TextBlock>
+                        <StackPanel Width="600" HorizontalAlignment="Left">
+                            <TextBlock x:ConnectionId='5' Foreground="white" TextWrapping="Wrap" FontSize="16"                        />
+                        </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
