@@ -12,7 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -36,6 +36,8 @@
                 <Button x:Name="localMap" HorizontalAlignment="Center" Content="Open locale map" Click="Button_Click_1"/>
             </StackPanel>
         </StackPanel>
+        
+        
 
     </Grid>
 </Page>
