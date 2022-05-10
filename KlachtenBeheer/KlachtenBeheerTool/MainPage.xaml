@@ -36,8 +36,8 @@
                 <Button x:Name="localMap" HorizontalAlignment="Center" Content="Open locale map" Click="Button_Click_1"/>
             </StackPanel>
         </StackPanel>
-        
-        
+
+
         <ListView IsItemClickEnabled="True" ItemClick="lvKlacht_ItemClick" x:Name="lvKlacht" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="Black">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
@@ -71,7 +71,17 @@
                     <TextBlock FontStyle="Italic">Selecteer links in de lijst een klacht daar erop klikken.</TextBlock>
                 </StackPanel>
             </StackPanel>
-            
+            <StackPanel Margin="0,40" Orientation="Horizontal"  Spacing="15" BorderBrush="Black" BorderThickness="2" Height="66" Width="626">
+                <TextBlock FontSize="15" Padding="30,0,0,0" Height="42" Width="309" SelectionChanged="TextBlock_SelectionChanged" Text="          Doorsturen naar afdeling:" TextAlignment="Center" VerticalAlignment="Bottom"/>
+                <ComboBox x:Name="department" HorizontalAlignment="center" VerticalAlignment="center" Width="150">
+                    <ComboBoxItem>Technische dienst</ComboBoxItem>
+                    <ComboBoxItem>Groenverzorging</ComboBoxItem>
+                    <ComboBoxItem>Klantenservice</ComboBoxItem>
+                    <ComboBoxItem>Horeca</ComboBoxItem>
+                </ComboBox>
+                <Button Click="Button_Click_2" Content="Stuur door" HorizontalAlignment="center" VerticalAlignment="center"/>
+            </StackPanel>
+
         </StackPanel>
     </Grid>
 </Page>

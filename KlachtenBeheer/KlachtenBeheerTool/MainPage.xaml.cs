@@ -85,8 +85,19 @@ namespace KlachtenBeheerTool
         {
             var klacht = (Klacht)e.ClickedItem;
             var Klachten = klacht.Row;
+            klachtNr.Text = klacht.Id;
             var popup = new Windows.UI.Popups.MessageDialog(Klachten);
             await popup.ShowAsync();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
