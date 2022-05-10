@@ -22,34 +22,34 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Orientation="Horizontal" Padding="30" Background="{ThemeResource SystemAccentColor}">
-            <Button Content="Kies CSV bestand" Click="Button_Click"/>
-            <TextBlock x:Name="tbFileStatus" Margin="30,0,0,0" VerticalAlignment="Center" Width="178"></TextBlock>
+            <Button x:ConnectionId='9' Content="Kies CSV bestand"                     />
+            <TextBlock x:ConnectionId='10' x:Name="tbFileStatus" Margin="30,0,0,0" VerticalAlignment="Center" Width="178"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Background="{ThemeResource SystemAccentColor}">
             <StackPanel Margin="0,15,0,0" VerticalAlignment="Center" Orientation="Vertical" HorizontalAlignment="Center" Padding="30" Background="{ThemeResource SystemAccentColor}">
-                <TextBlock FontSize="25" x:Name="count">test</TextBlock>
-                <TextBlock FontSize="25" x:Name="mean">test</TextBlock>
+                <TextBlock x:ConnectionId='7' FontSize="25" x:Name="count">test</TextBlock>
+                <TextBlock x:ConnectionId='8' FontSize="25" x:Name="mean">test</TextBlock>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="3"  Padding="30" Background="{ThemeResource SystemAccentColor}">
             <StackPanel HorizontalAlignment="Center" Padding="30" Background="{ThemeResource SystemAccentColor}">
-                <Button x:Name="localMap" HorizontalAlignment="Center" Content="Open locale map" Click="Button_Click_1"/>
+                <Button x:ConnectionId='6' x:Name="localMap" HorizontalAlignment="Center" Content="Open locale map"                       />
             </StackPanel>
         </StackPanel>
         
         
-        <ListView  x:Name="lvKlacht" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="Black">
+        <ListView x:ConnectionId='2'  x:Name="lvKlacht" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
                 </Style>
             </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="local:Klacht">
-                    <StackPanel Height="auto" Width="600px" Margin="0,20,0,20">
-                        <TextBlock Foreground="white" CharacterSpacing="3">
-                            <Run Foreground="white" FontSize="33">KlachtNummer</Run> <Run FontWeight="ExtraBlack" FontSize="33" Text="{x:Bind Id}"></Run><LineBreak/>
-                            <Run></Run>
+                <DataTemplate                          >
+                    <StackPanel x:ConnectionId='4' Height="20" Width="200px" Background="Wheat">
+                        <TextBlock>sdwasdw</TextBlock>
+                        <TextBlock>
+                            <Run Foreground="Black" FontSize="40">KlachtNummer</Run><Run x:ConnectionId='5'                   ></Run><LineBreak/>
                         </TextBlock>
                     </StackPanel>
                 </DataTemplate>
@@ -58,3 +58,4 @@
 
     </Grid>
 </Page>
+
