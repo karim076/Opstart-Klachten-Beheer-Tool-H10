@@ -72,7 +72,7 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Margin="0,40" Orientation="Horizontal"  Spacing="15" BorderBrush="Black" BorderThickness="2" Height="66" Width="626">
-                <TextBlock FontSize="15" Padding="30,0,0,0" Height="42" Width="309" SelectionChanged="TextBlock_SelectionChanged" Text="          Doorsturen naar afdeling:" TextAlignment="Center" VerticalAlignment="Bottom"/>
+                <TextBlock FontSize="15" Padding="30,0,0,0" Height="42" Width="285" SelectionChanged="TextBlock_SelectionChanged" Text="Doorsturen naar afdeling:" TextAlignment="Center" VerticalAlignment="Bottom"/>
                 <ComboBox x:Name="department" HorizontalAlignment="center" VerticalAlignment="center" Width="150">
                     <ComboBoxItem>Technische dienst</ComboBoxItem>
                     <ComboBoxItem>Groenverzorging</ComboBoxItem>
@@ -81,7 +81,7 @@
                 </ComboBox>
                 <Button Click="Button_Click_2" Content="Stuur door" HorizontalAlignment="center" VerticalAlignment="center"/>
             </StackPanel>
-
+            
         </StackPanel>
     </Grid>
 </Page>

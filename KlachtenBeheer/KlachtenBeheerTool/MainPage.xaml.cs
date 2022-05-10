@@ -88,11 +88,19 @@ namespace KlachtenBeheerTool
             klachtNr.Text = klacht.Id;
             var popup = new Windows.UI.Popups.MessageDialog(Klachten);
             await popup.ShowAsync();
-        }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        }
+        private async void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
+            if (department != null)
+            {
+                string afdeling = department.Name;
+                var storageFolder = ApplicationData.Current.LocalFolder;
+                var file = await storageFolder.CreateFileAsync("Doorsturen_naar_"+ afdeling + ".txt", CreationCollisionOption.ReplaceExisting);
+
+                await FileIO.AppendTextAsync(file, "--------------Klachtnummer--------------\n"+ klachtNr.Text + "\n--------------Afdeling--------------\n" + afdeling);
+            }
         }
 
         private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
