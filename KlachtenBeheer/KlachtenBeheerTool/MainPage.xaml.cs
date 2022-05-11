@@ -60,11 +60,11 @@ namespace KlachtenBeheerTool
                         {
                             var records = csv.GetRecords<Klacht>().ToList();
                             lvKlacht.ItemsSource = records;
-                            counting = records.Count;
+                            counting = + 1 +records.Count;
 
                             foreach(var record in records)
                             {
-                                revieuwCount = + 1 +float.Parse(record.ReviewScore);
+                                revieuwCount = + float.Parse(record.ReviewScore);
                             }
                             // count.Text = "Aantal Klachten: " + Convert.ToString(numComplaints);
                         }
@@ -86,8 +86,6 @@ namespace KlachtenBeheerTool
             var klacht = (Klacht)e.ClickedItem;
             var Klachten = klacht.Row;
             klachtNr.Text = klacht.Id;
-            var popup = new Windows.UI.Popups.MessageDialog(Klachten);
-            await popup.ShowAsync();
 
         }
         private async void Button_Click_2(object sender, RoutedEventArgs e)
